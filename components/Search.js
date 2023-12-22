@@ -95,21 +95,162 @@ const Search = () => {
             <ul className='mt-10'>
                 {filteredData.map(item => (
                     <li key={item.id} className='bg-[#3FDEAD] text-black m-5 p-5 rounded-md'>
-                        <b>ENSEMBL ID</b>: {item?.ENSEMBL_ID} <br />
-                        <b>GENE NAME</b>: {item?.GENE_NAME} <br />
-                        <b>GENE SYMBOL</b>: {item?.GENE_SYMBOL} <br />
-                        <b>CHROMOSOME</b>: {item?.CHROMOSOME} <br />
-                        <b>GENATIC CATEGORY</b>: {item?.GENATIC_CATEGORY} <br />
-                        <b>SFARI Gene Score</b>: {item?.SFARI_Gene_Score} <br />
-                        <b>SYNDROMIC</b>: {item?.SYNDROMIC} <br />
-                        <b>EAGLE</b>: {item?.EAGLE} <br />
-                        <b>SPARK Gene</b>: {item?.SPARK_Gene} <br />
-                        <b>GENE BIOTYPE</b>: {item?.GENE_BIOTYPE} <br />
-                        <b>Log2FC Cohort 1</b>: {item?.Log2FC} <br />
-                        <b>Adjusted Cohort 1</b>: {item?.Adjusted_Cohort_1} <br />
-                        <b>Log2FC Cohort 2</b>: {item?.Log2FC_Cohort_2} <br />
-                        <b>Adjusted Cohort 2</b>: {item?.Adjusted_Cohort_2} <br />
-                        <b>REFERENCES</b>: {item?.REFERENCES}
+
+                        {
+                            item?.ENSEMBL_ID &&
+                            <>
+                                <b>ENSEMBL ID</b>: {item?.ENSEMBL_ID} <br />
+                            </>
+                        }
+
+
+                        {
+                            item?.GENE_NAME &&
+                            <>
+                                <b>GENE NAME</b>: {item?.GENE_NAME} <br />
+                            </>
+                        }
+
+
+                        {
+                            item?.GENE_SYMBOL &&
+                            <>
+                                <b>GENE SYMBOL</b>: {item?.GENE_SYMBOL} <br />
+
+                            </>
+                        }
+
+
+
+
+                        {
+                            item?.CHROMOSOME &&
+                            <>
+                                <b>CHROMOSOME</b>: {item?.CHROMOSOME} <br />
+
+                            </>
+                        }
+
+
+
+
+                        {
+                            item?.GENATIC_CATEGORY &&
+                            <>
+                                <b>GENETIC CATEGORY</b>: {item?.GENATIC_CATEGORY} <br />
+
+                            </>
+                        }
+
+
+
+
+                        {
+                            item?.SFARI_Gene_Score &&
+                            <>
+                                <b>SFARI Gene-Score</b>: {item?.SFARI_Gene_Score} <br />
+
+                            </>
+                        }
+
+
+
+
+                        {
+                            item?.SYNDROMIC &&
+                            <>
+                                <b>SYNDROMIC</b>: {item?.SYNDROMIC} <br />
+
+                            </>
+                        }
+
+
+
+
+                        {
+                            item?.EAGLE &&
+                            <>
+                                <b>EAGLE</b>: {item?.EAGLE} <br />
+
+                            </>
+                        }
+
+
+
+
+                        {
+                            item?.SPARK_Gene &&
+                            <>
+                                <b>SPARK Gene</b>: {item?.SPARK_Gene} <br />
+
+                            </>
+                        }
+
+
+
+                        {
+                            item?.GENE_BIOTYPE &&
+                            <>
+                                <b>GENE BIOTYPE</b>: {item?.GENE_BIOTYPE} <br />
+
+                            </>
+                        }
+
+
+
+
+                        {
+                            item?.Log2FC &&
+                            <>
+                                <b>Log2FC (ASD vs CRTL) (Cohort 1)</b>: {item?.Log2FC} <br />
+
+                            </>
+                        }
+
+
+
+
+                        {
+                            item?.Adjusted_Cohort_1 &&
+                            <>
+                                <b>Adjusted P Value (Cohort 1)</b>: {item?.Adjusted_Cohort_1} <br />
+
+                            </>
+                        }
+
+
+
+
+                        {
+                            item?.Log2FC_Cohort_2 &&
+                            <>
+                                <b>Log2FC (ASD vs CTL) (Cohort 2)</b>: {item?.Log2FC_Cohort_2} <br />
+
+                            </>
+                        }
+
+
+
+                        {
+                            item?.Adjusted_Cohort_2 &&
+                            <>
+                                <b>Adjusted P Value (Cohort 2)</b>: {item?.Adjusted_Cohort_2} <br />
+
+                            </>
+                        }
+
+
+
+
+                        {
+                            item?.REFERENCES &&
+                            <>
+                                <b>REFERENCES</b>: {item?.REFERENCES}
+
+                            </>
+                        }
+
+
                     </li>
                 ))}
             </ul>
