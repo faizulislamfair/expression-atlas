@@ -95,7 +95,7 @@ const Search = () => {
 
 
 
-            <ul className='mt-10 pt-10'>
+            <ul className='grid place-content-center mt-10 pt-10'>
 
                 {
                     filteredData.map(item => (
