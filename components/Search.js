@@ -6,6 +6,10 @@ const Search = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredData, setFilteredData] = useState(data);
 
+
+    const [searchPressed, setSearchPressed] = useState(false);
+
+
     const handleSearch = () => {
 
         const newFilteredData = data.filter(item => {
@@ -54,6 +58,8 @@ const Search = () => {
 
         setFilteredData(newFilteredData);
 
+        setSearchPressed(true);
+
 
     }
 
@@ -95,170 +101,174 @@ const Search = () => {
 
 
 
-            <ul className='grid place-content-center mt-10 pt-10'>
+            <div className='grid place-content-center mt-10 pt-10'>
 
                 {
-                    filteredData.map(item => (
-                        <li key={item.id} className='bg-[#3FDEAD] text-black m-5 p-5 rounded-md'>
 
-                            {
-                                item?.ENSEMBL_ID &&
-                                <>
-                                    <b>ENSEMBL ID</b>: {item?.ENSEMBL_ID} <br />
-                                </>
-                            }
+                    searchPressed && (
 
+                        filteredData.map(item => (
+                            <div key={item.id} className='bg-[#3FDEAD] text-black m-5 p-5 rounded-md'>
 
-                            {
-                                item?.GENE_NAME &&
-                                <>
-                                    <b>GENE NAME</b>: {item?.GENE_NAME} <br />
-                                </>
-                            }
+                                {
+                                    item?.ENSEMBL_ID &&
+                                    <>
+                                        <b>ENSEMBL ID</b>: {item?.ENSEMBL_ID} <br />
+                                    </>
+                                }
 
 
-                            {
-                                item?.GENE_SYMBOL &&
-                                <>
-                                    <b>GENE SYMBOL</b>: {item?.GENE_SYMBOL} <br />
+                                {
+                                    item?.GENE_NAME &&
+                                    <>
+                                        <b>GENE NAME</b>: {item?.GENE_NAME} <br />
+                                    </>
+                                }
 
-                                </>
-                            }
 
+                                {
+                                    item?.GENE_SYMBOL &&
+                                    <>
+                                        <b>GENE SYMBOL</b>: {item?.GENE_SYMBOL} <br />
 
+                                    </>
+                                }
 
 
-                            {
-                                item?.CHROMOSOME &&
-                                <>
-                                    <b>CHROMOSOME</b>: {item?.CHROMOSOME} <br />
 
-                                </>
-                            }
 
+                                {
+                                    item?.CHROMOSOME &&
+                                    <>
+                                        <b>CHROMOSOME</b>: {item?.CHROMOSOME} <br />
 
+                                    </>
+                                }
 
 
-                            {
-                                item?.GENATIC_CATEGORY &&
-                                <>
-                                    <b>GENETIC CATEGORY</b>: {item?.GENATIC_CATEGORY} <br />
 
-                                </>
-                            }
 
+                                {
+                                    item?.GENATIC_CATEGORY &&
+                                    <>
+                                        <b>GENETIC CATEGORY</b>: {item?.GENATIC_CATEGORY} <br />
 
+                                    </>
+                                }
 
 
-                            {
-                                item?.SFARI_Gene_Score &&
-                                <>
-                                    <b>SFARI Gene-Score</b>: {item?.SFARI_Gene_Score} <br />
 
-                                </>
-                            }
 
+                                {
+                                    item?.SFARI_Gene_Score &&
+                                    <>
+                                        <b>SFARI Gene-Score</b>: {item?.SFARI_Gene_Score} <br />
 
+                                    </>
+                                }
 
 
-                            {
-                                item?.SYNDROMIC &&
-                                <>
-                                    <b>SYNDROMIC</b>: {item?.SYNDROMIC} <br />
 
-                                </>
-                            }
 
+                                {
+                                    item?.SYNDROMIC &&
+                                    <>
+                                        <b>SYNDROMIC</b>: {item?.SYNDROMIC} <br />
 
+                                    </>
+                                }
 
 
-                            {
-                                item?.EAGLE &&
-                                <>
-                                    <b>EAGLE</b>: {item?.EAGLE} <br />
 
-                                </>
-                            }
 
+                                {
+                                    item?.EAGLE &&
+                                    <>
+                                        <b>EAGLE</b>: {item?.EAGLE} <br />
 
+                                    </>
+                                }
 
 
-                            {
-                                item?.SPARK_Gene &&
-                                <>
-                                    <b>SPARK Gene</b>: {item?.SPARK_Gene} <br />
 
-                                </>
-                            }
 
+                                {
+                                    item?.SPARK_Gene &&
+                                    <>
+                                        <b>SPARK Gene</b>: {item?.SPARK_Gene} <br />
 
+                                    </>
+                                }
 
-                            {
-                                item?.GENE_BIOTYPE &&
-                                <>
-                                    <b>GENE BIOTYPE</b>: {item?.GENE_BIOTYPE} <br />
 
-                                </>
-                            }
 
+                                {
+                                    item?.GENE_BIOTYPE &&
+                                    <>
+                                        <b>GENE BIOTYPE</b>: {item?.GENE_BIOTYPE} <br />
 
+                                    </>
+                                }
 
 
-                            {
-                                item?.Log2FC &&
-                                <>
-                                    <b>Log2FC (ASD vs CRTL) (Cohort 1)</b>: {item?.Log2FC} <br />
 
-                                </>
-                            }
 
+                                {
+                                    item?.Log2FC &&
+                                    <>
+                                        <b>Log2FC (ASD vs CRTL) (Cohort 1)</b>: {item?.Log2FC} <br />
 
+                                    </>
+                                }
 
 
-                            {
-                                item?.Adjusted_Cohort_1 &&
-                                <>
-                                    <b>Adjusted P Value (Cohort 1)</b>: {item?.Adjusted_Cohort_1} <br />
 
-                                </>
-                            }
 
+                                {
+                                    item?.Adjusted_Cohort_1 &&
+                                    <>
+                                        <b>Adjusted P Value (Cohort 1)</b>: {item?.Adjusted_Cohort_1} <br />
 
+                                    </>
+                                }
 
 
-                            {
-                                item?.Log2FC_Cohort_2 &&
-                                <>
-                                    <b>Log2FC (ASD vs CTL) (Cohort 2)</b>: {item?.Log2FC_Cohort_2} <br />
 
-                                </>
-                            }
 
+                                {
+                                    item?.Log2FC_Cohort_2 &&
+                                    <>
+                                        <b>Log2FC (ASD vs CTL) (Cohort 2)</b>: {item?.Log2FC_Cohort_2} <br />
 
+                                    </>
+                                }
 
-                            {
-                                item?.Adjusted_Cohort_2 &&
-                                <>
-                                    <b>Adjusted P Value (Cohort 2)</b>: {item?.Adjusted_Cohort_2} <br />
 
-                                </>
-                            }
 
+                                {
+                                    item?.Adjusted_Cohort_2 &&
+                                    <>
+                                        <b>Adjusted P Value (Cohort 2)</b>: {item?.Adjusted_Cohort_2} <br />
 
+                                    </>
+                                }
 
 
-                            {
-                                item?.REFERENCES &&
-                                <>
-                                    <b>REFERENCES</b>: {item?.REFERENCES}
 
-                                </>
-                            }
 
+                                {
+                                    item?.REFERENCES &&
+                                    <>
+                                        <b>REFERENCES</b>: {item?.REFERENCES}
 
-                        </li>
-                    ))}
-            </ul>
+                                    </>
+                                }
+
+
+                            </div>
+
+                        )))}
+            </div>
         </div>
     );
 };
