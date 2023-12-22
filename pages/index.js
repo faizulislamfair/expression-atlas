@@ -5,7 +5,7 @@ export default function Home() {
     <div>
       <h1 className='text-5xl text-center p-5 bg-black text-white'>Expression Atlas of ASD Risk genes</h1>
 
-      <div className='mt-10 text-3xl text-center'>
+      <div className='mt-12 pt-10 text-3xl text-center'>
 
         Page <span className='bg-[#F8E0C8] p-3'> Expression Atlas of ASD Risk genes</span>
       </div>
